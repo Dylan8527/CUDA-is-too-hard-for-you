@@ -1,0 +1,16 @@
+#ifndef SRC_C_CUDA_TEMPLATE_VERSION_H_
+#define SRC_C_CUDA_TEMPLATE_VERSION_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#define CUDA_TEMPLATE_VERSION_MAJOR @CudaTemplate_VERSION_MAJOR@
+#define CUDA_TEMPLATE_VERSION_MINOR @CudaTemplate_VERSION_MINOR@
+#define CUDA_TEMPLATE_VERSION_PATCH @CudaTemplate_VERSION_PATCH@
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // SRC_C_CUDA_TEMPLATE_VERSION_H_

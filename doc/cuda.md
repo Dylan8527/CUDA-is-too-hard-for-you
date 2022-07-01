@@ -118,13 +118,27 @@ int main()
 	...
     // Kernel blocks'config
     dim3 threadsPerBlock(16,16);
-    dim3 numBlocks(N / threadsPerBlock.x, N / threadsPerBlock.y);
+    dim3 numBlocks(N/threadsPerBlock.x+1, N/threadsPerBlock.y+1);
     MatAdd <<<numBlocks, threadsPerBlock>>>(A, B, C);
     ...
 }
 ```
 
+## 2.4线程内存
 
+这里简单介绍下CUDA的内存模型。每个线程有自己的私有本地内存（Local Memory），而每个线程块又包含共享内存（Shared Memory），可以被线程块中所有线程共享，其生命周期与线程块一致。此外，所有的线程都可以访问全局内存（Global Memory）。还可以访问一些只读内存块：常量内存（Constant Memory）和纹理内存（Texture Memory）。内存结构涉及到程序优化。
 
+![img](https://pic2.zhimg.com/80/v2-6456af75530956da6bc5bab7418ff9e5_720w.jpg)
 
+# 3.Introduction to CUDA C
+
+## 3.1如何查看GPU配置
+
+在进行CUDA编程前，可以先检查一下自己的GPU的硬件配置，这样才可以有的放矢，可以通过下面的程序获得GPU的配置属性。
+
+```c++
+int dev = 0;
+cudaDeviceProp devProp;
+CHECK(cudaGetDeviceProperties(&devProp,))
+```
 

@@ -1,0 +1,2 @@
+C:/Users/Lenovo/Desktop/CUDA-is-too-hard-for-you/build/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo/Desktop/CUDA-is-too-hard-for-you/build/CMakeFiles/rebuild_cache.dir
